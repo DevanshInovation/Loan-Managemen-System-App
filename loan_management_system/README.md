@@ -1,10 +1,10 @@
-# 💰 Loan Management System
+# Loan Management System
 
 **A secure Spring Boot-based Loan Management System that allows customers to apply for loans, admins to approve them, and supports tracking repayments and overdue status**
 
-## 🔧 Setup Instructions
+##  Setup Instructions
 
-### ✅ Prerequisites
+### Prerequisites
 
 - Java 17+
 - Maven 3.9+
@@ -62,7 +62,7 @@ iii) No frontend included. APIs tested via Swagger UI or Insomnia.
 
 iV) Email notifications and cron-based overdue updates are planned as future improvements.
 
-🗃# Database Schema
+# Database Schema
 **Customer**
 Field ||	Type
 id	Long
@@ -114,6 +114,13 @@ iV) chore: add Swagger config for JWT auth
 # API Endpoints
  **All endpoints are secured and require a Bearer Token (JWT) in the Authorization header.**
 
+ **Authentication**
+i) POST http://localhost:8081/loan-management-app/auth/login — Login and receive JWT token and Token Will be validate 10 hours
+  username : admin, password : admin
+
+  **Full Swagger UI**  
+  http://localhost:8081/loan-management-app/swagger-ui/index.html
+
 **Customer Endpoints**
 POST http://localhost:8081/loan-management-app/customers/register — Register new customer
 GET http://localhost:8081/loan-management-app/customers/{id} — Get customer by ID
@@ -132,9 +139,6 @@ GET http://localhost:8081/loan-management-app/loans/pending — Get all pending 
 POST http://localhost:8081/loan-management-app/repayments/{loanId} — Make a repayment
 GET http://localhost:8081/loan-management-app/repayments/overdue — View overdue repayments
 
-**Authentication** (If Implemented)
-POST http://localhost:8081/loan-management-app/auth/register — Register a new user (Admin/Customer)
-POST http://localhost:8081/loan-management-app/auth/login — Login and receive JWT token and Token Will be validate 10 hours
 
 
 
